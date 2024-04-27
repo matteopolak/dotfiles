@@ -1,0 +1,16 @@
+[window]
+padding = { x = 12, y = 12 }
+decorations = "None"
+
+[font]
+normal.family = "JetBrainsMonoNerdFont"
+size = 11
+
+[shell]
+program = "/usr/bin/zsh"
+
+[scrolling]
+history = 25000
+
+[mouse]
+hide_when_typing = true
