@@ -1,0 +1,9 @@
+[submodule ".oh-my-zsh/custom/plugins/zsh-nvm"]
+	path = .oh-my-zsh/custom/plugins/zsh-nvm
+	url = https://github.com/lukechilds/zsh-nvm
+[submodule ".oh-my-zsh/custom/plugins/zsh-autosuggestions"]
+	path = .oh-my-zsh/custom/plugins/zsh-autosuggestions
+	url = https://github.com/zsh-users/zsh-autosuggestions.git
+[submodule ".oh-my-zsh/custom/plugins/zsh-autocomplete"]
+	path = .oh-my-zsh/custom/plugins/zsh-autocomplete
+	url = https://github.com/marlonrichert/zsh-autocomplete.git

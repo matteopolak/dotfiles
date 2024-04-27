@@ -1,0 +1,25 @@
+/*
+!/.*
+/.*
+!/.gitignore
+
+!/README.md
+!/LICENSE
+!/.gitmodules
+
+# configs
+!/.config
+/.config/*
+!/.config/nvim
+!/.config/alacritty
+
+# home configs
+!/.zshrc
+
+!/.cargo
+/.cargo/*
+!/.cargo/config.toml
+
+!/.oh-my-zsh
+/.oh-my-zsh/*
+!/.oh-my-zsh/custom
