@@ -63,7 +63,7 @@ vim.opt.scrolloff = 10
 vim.opt.tabstop = 2
 vim.opt.softtabstop = 0
 vim.opt.shiftwidth = 2
-vim.opt.expandtab = true
+vim.opt.expandtab = false
 vim.opt.smartindent = true
 vim.opt.preserveindent = true
 
@@ -98,7 +98,7 @@ vim.keymap.set("n", "<C-j>", "<C-w><C-j>", { desc = "Move focus to the lower win
 vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper window" })
 
 -- Telescope
-vim.keymap.set("n", "<C-b>", ":Telescope live_grep<CR>", { desc = "Search for text in files" })
+vim.keymap.set("n", "<C-b>", "<cmd>Telescope live_grep<CR>", { desc = "Search for text in files" })
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`

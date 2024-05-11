@@ -25,7 +25,7 @@ return {
 				},
 			},
 			on_attach = function(_, bufnr)
-				vim.lsp.inlay_hint.enable(bufnr, true)
+				vim.lsp.inlay_hint.enable(true, { bufnr })
 			end,
 		},
 	},
