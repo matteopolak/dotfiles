@@ -15,6 +15,7 @@
 
 # home configs
 !/.zshrc
+!/.gitconfig
 
 !/.cargo
 /.cargo/*

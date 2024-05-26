@@ -1,0 +1,10 @@
+[user]
+	email = matteopolak@hotmail.com
+	name = matteopolak
+	signingkey = 8C73FE19837599F1
+[commit]
+	gpgsign = true
+[init]
+	defaultBranch = main
+[alias]
+	stag = tag -s
