@@ -35,3 +35,11 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 # deno
 export DENO_INSTALL="/home/mat/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
+
+# pnpm
+export PNPM_HOME="/home/mat/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
