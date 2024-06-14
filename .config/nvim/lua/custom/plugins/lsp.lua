@@ -11,6 +11,9 @@ return {
 						vim.lsp.inlay_hint.enable(true, { bufnr })
 					end,
 				},
+				tools = {
+					enable_clippy = true,
+				},
 			}
 		end,
 	},
