@@ -22,7 +22,7 @@ done
 . "$HOME/.cargo/env"
 
 export GPG_TTY=$(tty)
-export PATH=$PATH:/usr/local/go/bin
+export PATH="$PATH:/usr/local/go/bin"
 
 
 # bun completions
@@ -43,3 +43,6 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
+# .local/bin
+export PATH="$PATH:/home/mat/.local/bin"
