@@ -12,6 +12,7 @@
 /.config/*
 !/.config/nvim
 !/.config/alacritty
+!/.config/rustfmt
 
 # home configs
 !/.zshrc
