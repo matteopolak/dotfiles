@@ -8,3 +8,7 @@
 	defaultBranch = main
 [alias]
 	stag = tag -s
+	staash = stash --all
+	fpush = push --force-with-lease
+[rerere]
+	enabled = true
