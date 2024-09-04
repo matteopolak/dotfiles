@@ -199,12 +199,7 @@ return {
 			formatters_by_ft = {
 				lua = { "stylua" },
 				python = { "ruff" },
-				-- Conform can also run multiple formatters sequentially
-				-- python = { "isort", "black" },
-				--
-				-- You can use a sub-list to tell conform to run *until* a formatter
-				-- is found.
-				-- javascript = { { "prettierd", "prettier" } },
+				markdown = { "mdformat" },
 			},
 		},
 	},
@@ -319,5 +314,13 @@ return {
 			--    - Show your current context: https://github.com/nvim-treesitter/nvim-treesitter-context
 			--    - Treesitter + textobjects: https://github.com/nvim-treesitter/nvim-treesitter-textobjects
 		end,
+	},
+
+	{
+		"windwp/nvim-ts-autotag",
+		opts = {
+			-- Enable the plugin
+			enable = true,
+		},
 	},
 }

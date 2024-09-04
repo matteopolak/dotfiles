@@ -27,7 +27,9 @@ return {
 					includeInlayParameterNameHints = "all",
 				},
 			},
-			on_attach = function(_, bufnr)
+			on_attach = function(client, bufnr)
+				client.server_capabilities.documentFormattingProvider = false
+				client.server_capabilities.documentRangeFormattingProvider = false
 				vim.lsp.inlay_hint.enable(true, { bufnr })
 			end,
 		},
@@ -189,7 +191,14 @@ return {
 				-- tsserver = {},
 				--
 
-				svelte = {},
+				svelte = {
+					-- disable formatting
+					capabilities = {
+						textDocument = {
+							formatting = false,
+						},
+					},
+				},
 
 				lua_ls = {
 					-- cmd = {...},
@@ -202,6 +211,14 @@ return {
 							},
 							-- You can toggle below to ignore Lua_LS's noisy `missing-fields` warnings
 							-- diagnostics = { disable = { 'missing-fields' } },
+						},
+					},
+				},
+
+				tailwindcss = {
+					capabilities = {
+						textDocument = {
+							formatting = false,
 						},
 					},
 				},

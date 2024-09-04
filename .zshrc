@@ -1,6 +1,9 @@
 export ZSH="$HOME/.oh-my-zsh"
 export ZSH_THEME="af-minimal"
 
+# add john the ripper alias to ~/crack/JohnTheRipper/run/john
+alias john="JOHN=~/crack/JohnTheRipper/run ~/crack/JohnTheRipper/run/john"
+
 # https://github.com/vercel/hyper/issues/2144#issuecomment-326741620
 unsetopt PROMPT_SP
 
