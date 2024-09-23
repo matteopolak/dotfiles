@@ -46,14 +46,10 @@ return {
 	{
 		"prettier/vim-prettier",
 		ft = { "javascript", "typescript", "javascriptreact", "typescriptreact", "json", "css", "scss", "html", "vue", "svelte" },
-		opts = {
-			on_attach = function(client, bufnr)
-				vim.api.nvim_create_autocmd("BufWritePre", {
-					buffer = bufnr,
-					command = "Prettier",
-				})
-			end,
-		}
+		config = function()
+			vim.g["prettier#autoformat"] = 1
+			vim.g["prettier#autoformat_require_pragma"] = 0
+		end,
 	},
 
 	{
