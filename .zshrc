@@ -27,7 +27,6 @@ done
 export GPG_TTY=$(tty)
 export PATH="$PATH:/usr/local/go/bin"
 
-
 # bun completions
 [ -s "/home/mat/.bun/_bun" ] && source "/home/mat/.bun/_bun"
 
@@ -49,3 +48,6 @@ esac
 
 # .local/bin
 export PATH="$PATH:/home/mat/.local/bin"
+
+# opam configuration
+[[ ! -r /home/mat/.opam/opam-init/init.zsh ]] || source /home/mat/.opam/opam-init/init.zsh > /dev/null 2> /dev/null

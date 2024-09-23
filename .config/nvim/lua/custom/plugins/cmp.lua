@@ -71,9 +71,6 @@ return {
 					completeopt = "menu,menuone,noinsert",
 					--completeopt = "menu,menuone,noselect",
 				},
-				performance = {
-					max_view_entries = 20,
-				},
 
 				-- For an understanding of why these mappings were
 				-- chosen, you will need to read `:help ins-completion`

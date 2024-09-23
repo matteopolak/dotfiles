@@ -12,3 +12,5 @@
 	fpush = push --force-with-lease
 [rerere]
 	enabled = true
+[core]
+	editor = nvim
