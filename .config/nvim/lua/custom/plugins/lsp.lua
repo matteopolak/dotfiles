@@ -9,6 +9,13 @@ return {
 				server = {
 					on_attach = function(_, bufnr)
 						vim.lsp.inlay_hint.enable(true, { bufnr })
+
+						local format_sync_grp = vim.api.nvim_create_augroup("RustaceanFormat", {})
+						vim.api.nvim_create_autocmd("BufWritePre", {
+							buffer = bufnr,
+							callback = function() vim.lsp.buf.format() end,
+							group = format_sync_grp,
+						})
 					end,
 				},
 				tools = {
