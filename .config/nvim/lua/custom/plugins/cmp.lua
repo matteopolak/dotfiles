@@ -19,6 +19,13 @@ return {
 		-- use opts = {} for passing setup options
 		-- this is equalent to setup({}) function
 	},
+	{
+		"windwp/nvim-ts-autotag",
+		opts = {
+			-- Enable the plugin
+			enable = true,
+		},
+	},
 	{ -- Autocompletion
 		"hrsh7th/nvim-cmp",
 		event = "InsertEnter",

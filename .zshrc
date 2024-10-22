@@ -4,6 +4,12 @@ export ZSH_THEME="af-minimal"
 # add john the ripper alias to ~/crack/JohnTheRipper/run/john
 alias john="JOHN=~/crack/JohnTheRipper/run ~/crack/JohnTheRipper/run/john"
 
+# add quick compile shortcut
+cpp() {
+  local p="$(mktemp)"
+  g++ -o $p $1 && $p && rm $p
+}
+
 # https://github.com/vercel/hyper/issues/2144#issuecomment-326741620
 unsetopt PROMPT_SP
 

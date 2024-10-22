@@ -179,6 +179,22 @@ return {
 						})
 					end,
 				},
+				pyright = {
+					settings = {
+						python = {
+							pythonPath = vim.fn.exepath("python3"),
+							analysis = {
+								autoSearchPaths = true,
+								useLibraryCodeForTypes = true,
+								diagnosticMode = "workspace",
+								autoImportCompletions = true,
+								extraPaths = {
+									vim.fn.expand("~/.local/lib/python3.10/site-packages")
+								}
+							},
+						}
+					}
+				}
 			}
 
 			-- Ensure the servers and tools above are installed
