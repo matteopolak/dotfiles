@@ -225,7 +225,7 @@ return {
 			},
 		},
 		init = function()
-			vim.keymap.set("n", "<C-n>", ":NvimTreeToggle<CR>", { noremap = true, silent = true })
+			vim.keymap.set("n", "<C-n>", "<cmd>NvimTreeToggle<CR>", { noremap = true, silent = true })
 		end,
 	},
 
