@@ -26,6 +26,14 @@ return {
 	},
 
 	{
+		'saecki/crates.nvim',
+		tag = 'stable',
+		config = function()
+			require('crates').setup()
+		end,
+	},
+
+	{
 		"pmizio/typescript-tools.nvim",
 		dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
 		opts = {

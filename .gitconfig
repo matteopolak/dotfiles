@@ -4,6 +4,10 @@
 	signingkey = 8C73FE19837599F1
 [commit]
 	gpgsign = true
+[pull]
+	rebase = true
+[rebase]
+	autoStash = true
 [init]
 	defaultBranch = main
 [alias]
