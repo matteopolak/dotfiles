@@ -6,7 +6,7 @@ decorations = "None"
 normal.family = "JetBrainsMonoNerdFont"
 size = 11
 
-[shell]
+[terminal.shell]
 program = "/usr/bin/zsh"
 
 [scrolling]
@@ -14,3 +14,5 @@ history = 25000
 
 [mouse]
 hide_when_typing = true
+
+[terminal]

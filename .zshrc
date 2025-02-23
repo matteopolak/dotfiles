@@ -10,6 +10,9 @@ cpp() {
   g++ -o $p $1 && $p && rm $p
 }
 
+export VCPKG_ROOT="$HOME/build/vcpkg"
+export PATH="$VCPKG_ROOT:$PATH"
+
 # https://github.com/vercel/hyper/issues/2144#issuecomment-326741620
 unsetopt PROMPT_SP
 
