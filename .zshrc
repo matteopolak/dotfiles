@@ -16,6 +16,8 @@ export PATH="$VCPKG_ROOT:$PATH"
 # https://github.com/vercel/hyper/issues/2144#issuecomment-326741620
 unsetopt PROMPT_SP
 
+export LD=/usr/local/bin/mold
+
 # export NVM_LAZY_LOAD=true
 export NVM_COMPLETION=true
 
