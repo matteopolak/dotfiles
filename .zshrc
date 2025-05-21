@@ -4,10 +4,20 @@ export ZSH_THEME="af-minimal"
 # add john the ripper alias to ~/crack/JohnTheRipper/run/john
 alias john="JOHN=~/crack/JohnTheRipper/run ~/crack/JohnTheRipper/run/john"
 
-# add quick compile shortcut
-cpp() {
-  local p="$(mktemp)"
-  g++ -o $p $1 && $p && rm $p
+# run by file extension
+run() {
+	local ext="${1##*.}"
+	case $ext in
+		py) python3 $1 ;;
+		js) node $1 ;;
+		ts) deno run $1 ;;
+		go) go run $1 ;;
+		sh) bash $1 ;;
+		rb) ruby $1 ;;
+		rs) cargo run --release --bin ${1%.*} ;;
+		cpp) g++ -o ${1%.*} $1 && ./${1%.*} ;;
+		*) echo "Unsupported file type: $ext" ;;
+	esac
 }
 
 export VCPKG_ROOT="$HOME/build/vcpkg"

@@ -1,19 +1,25 @@
+local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
+
 vim.api.nvim_create_autocmd('LspAttach', {
 	callback = function(args)
 		local client = vim.lsp.get_client_by_id(args.data.client_id)
 		if client:supports_method('textDocument/implementation') then
 			-- Create a keymap for vim.lsp.buf.implementation
 		end
+
 		if client:supports_method('textDocument/completion') then
 			-- Enable auto-completion
 			--vim.lsp.completion.enable(true, client.id, args.buf, { autotrigger = false })
 		end
+
 		if client:supports_method('textDocument/formatting') then
+			vim.api.nvim_clear_autocmds({ group = augroup, buffer = args.buf })
+
 			-- Format the current buffer on save
 			vim.api.nvim_create_autocmd('BufWritePre', {
 				buffer = args.buf,
 				callback = function()
-					vim.lsp.buf.format({ bufnr = args.buf, id = client.id })
+					vim.lsp.buf.format({ group = augroup, buffer = args.buf, id = client.id })
 				end,
 			})
 		end
@@ -51,10 +57,11 @@ return {
 		'saecki/crates.nvim',
 		tag = 'stable',
 		config = function()
-			require('crates').setup()
+			require('crates').setup({})
 		end,
 	},
 
+	--[[
 	{
 		"pmizio/typescript-tools.nvim",
 		dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
@@ -71,14 +78,24 @@ return {
 			end,
 		},
 	},
+	--]]
 
-	-- prettier
+	-- better prettier
 	{
-		"prettier/vim-prettier",
-		ft = { "javascript", "typescript", "javascriptreact", "typescriptreact", "json", "css", "scss", "html", "vue", "svelte" },
+		"sbdchd/neoformat",
+		-- if root has a valid prettierrc config, run this on bufWritePre
 		config = function()
-			vim.g["prettier#autoformat"] = 1
-			vim.g["prettier#autoformat_require_pragma"] = 0
+			vim.g.neoformat_try_node_exe = 1;
+
+			-- autocmd BufWritePre *.js Neoformat
+			-- but with neovim stuff
+			vim.api.nvim_create_autocmd("BufWritePre", {
+				pattern = { "*.js", "*.ts", "*.jsx", "*.tsx", "*.json", "*.css", "*.scss", "*.html", "*.vue", "*.svelte" },
+				callback = function()
+					-- do it silently
+					vim.cmd("silent Neoformat")
+				end,
+			})
 		end,
 	},
 
@@ -224,7 +241,11 @@ return {
 							},
 						}
 					}
-				}
+				},
+				-- disable formattin for tsserver
+				ts_ls = {
+
+				},
 			}
 
 			-- Ensure the servers and tools above are installed
